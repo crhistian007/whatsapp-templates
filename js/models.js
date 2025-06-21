@@ -1,4 +1,3 @@
-
 class Template {
   constructor(titulo, mensaje, hashtag) {
     this.titulo    = titulo;
@@ -20,10 +19,10 @@ class Template {
           </span>
         </div>
         <p class="mb-2 text-gray-700">${this.mensaje}</p>
-        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded mb-4">
+        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">
           #${this.hashtag}
         </span>
-        <div class="text-right">
+        <div class="text-right mt-4">
           <button onclick="templateStore.removeTemplate(${index})"
                   class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
             Eliminar
@@ -35,5 +34,6 @@ class Template {
 }
 
 window.Template = Template;
+
 
 
