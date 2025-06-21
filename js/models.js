@@ -12,7 +12,8 @@ class Template {
       <div class="bg-white rounded-lg p-6 shadow border">
         <div class="flex justify-between items-center mb-2">
           <h3 class="text-xl font-semibold">
-            ${this.titulo} <span class="text-sm text-gray-500">#${index + 1}</span>
+            ${this.titulo}
+            <span class="text-sm text-gray-500">#${index + 1}</span>
           </h3>
           <span class="text-xs text-gray-400">
             ${new Date(this.createdAt).toLocaleString()}
@@ -22,8 +23,12 @@ class Template {
         <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">
           #${this.hashtag}
         </span>
-        <div class="text-right mt-4">
-          <button onclick="templateStore.removeTemplate(${index})"
+        <div class="text-right mt-4 flex justify-end gap-2">
+          <button onclick="startEditing(${index})"
+                  class="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600">
+            Editar
+          </button>
+          <button onclick="promptDelete(${index})"
                   class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
             Eliminar
           </button>
@@ -34,6 +39,7 @@ class Template {
 }
 
 window.Template = Template;
+
 
 
 
